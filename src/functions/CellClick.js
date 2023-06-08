@@ -13,6 +13,8 @@ export const handleCellClick = (e, w, h, grid, setGrid, item, handleMineClicked,
     newGrid[w][h].isClicked = true
     for (let i = 0; i < newGrid.length; i++) {
       for (let j = 0; j < newGrid.length; j++) {
+        newGrid[i][j].isClicked = true;
+        console.log(newGrid[i][j])
         if (newGrid[i][j].value === "X") {
           newGrid[i][j].isClicked = true;
           newGrid[i][j].isMarked = false;

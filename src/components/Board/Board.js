@@ -45,7 +45,10 @@ const Board = ({ height, width, mines, mineCount, gameOver, handleGameOver, mine
   const dimenstions = difficulty === "beginner" ? "25px" : difficulty === "intermediate" ? "20px" : "18px";
 
   return (
-    <BoardContainer style={{ gridTemplateColumns: `repeat(${height}, ${dimenstions}`, gridTemplateRows: `repeat(${width}, ${dimenstions}` }}>
+    <BoardContainer 
+    style={{ gridTemplateColumns: `repeat(${height}, ${dimenstions}`, gridTemplateRows: `repeat(${width}, ${dimenstions}` }}
+    mineClicked={mineClicked}
+    >
       {
         grid.map((row) => {
           return row.map((item, index) => {
@@ -61,7 +64,6 @@ const Board = ({ height, width, mines, mineCount, gameOver, handleGameOver, mine
                 gameOver={gameOver}
                 handleGameOver={handleGameOver}
                 handleMineClicked={handleMineClicked}
-                mineCount={mineCount}
                 setMineCount={setMineCount}
                 checkArr={checkArr}
                 setCheckArr={setCheckArr}

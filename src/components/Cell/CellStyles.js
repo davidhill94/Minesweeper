@@ -12,7 +12,6 @@ background-color: var(--theme-secondary);
 font-size: 0;
 cursor: pointer;
 
-
 &.mine{
     background-color: var(--theme-mine);
     font-size: ${(props) => (props.difficulty === "beginner" ? "1rem" : props.difficulty === "intermediate" ? "0.8rem" : "0.8rem")};

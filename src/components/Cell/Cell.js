@@ -4,7 +4,7 @@ import { CellContainer } from './CellStyles';
 import { handleCellClick } from '../../functions/CellClick';
 import { handleRightClick } from '../../functions/RightClick';
 
-const Cell = ({ item, setGrid, grid, gameOver, handleGameOver, handleMineClicked, mineCount, setMineCount, checkArr, setCheckArr, difficulty, setMinesRemaining }) => {
+const Cell = ({ item, setGrid, grid, gameOver, handleGameOver, handleMineClicked, setMineCount, checkArr, setCheckArr, difficulty, setMinesRemaining }) => {
 
   useEffect(() => {
     if (gameOver === true) {
@@ -25,7 +25,8 @@ const Cell = ({ item, setGrid, grid, gameOver, handleGameOver, handleMineClicked
     id={[item.x, item.y]}
     onClick={(e) => handleCellClick(e, item.x, item.y, grid, setGrid, item, handleMineClicked, setMineCount, setCheckArr, checkArr)}
     item={item}
-    difficulty={difficulty}>
+    difficulty={difficulty}
+    >
       {item.isMarked ? <FaFlag /> : 
       item.isClicked && item.value === "X" ? <FaBomb /> :
       item.value}
