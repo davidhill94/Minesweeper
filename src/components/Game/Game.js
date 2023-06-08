@@ -5,6 +5,7 @@ import { beginnerDifficulty, hardDifficulty, intermediateDifficulty } from '../.
 import { GameContainer } from './GameStyles';
 import Settings from '../Settings/Settings';
 import Logo from '../Logo/Logo';
+import InstructionsModal from '../Instructions/InstructionsModal';
 
 const Game = () => {
 
@@ -16,6 +17,7 @@ const Game = () => {
     const [mineClicked, setMineClicked] = useState(false);
     const [difficulty, setDifficulty] = useState("beginner");
     const [minesRemaining, setMinesRemaining] = useState(10);
+    const [instructionsModal, setInstructionsModal] = useState(false);
  
 const handleGameOver = (bool) => {
   setGameOver(bool);
@@ -24,7 +26,6 @@ const handleGameOver = (bool) => {
 const handleMineClicked = (bool) => {
   setMineClicked(bool)
 }
-
 
   return (
     <GameContainer>
@@ -43,7 +44,11 @@ const handleMineClicked = (bool) => {
     setMinesRemaining={setMinesRemaining}
     minesRemaining={minesRemaining}
     />
-    <MineCount mineCount={mineCount}/>
+    <MineCount 
+    mineCount={mineCount}
+    setInstructionsModal={setInstructionsModal}
+    instructionsModal={instructionsModal}
+    />
     <Settings 
     setHeight={setHeight}
     setWidth={setWidth}
@@ -55,6 +60,10 @@ const handleMineClicked = (bool) => {
     hardDifficulty={hardDifficulty}
     setDifficulty={setDifficulty}
     mineClicked={mineClicked}
+    />
+    <InstructionsModal 
+    instructionsModal={instructionsModal} 
+    setInstructionsModal={setInstructionsModal}
     />
     </GameContainer>
   )
