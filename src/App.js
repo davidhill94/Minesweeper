@@ -6,7 +6,7 @@ function App() {
 
   return (
     <div className="App">
-      {window.innerWidth < 550 || window.innerHeight < 720
+      {window.innerWidth < 550 || window.innerHeight < 600
       ? 
       <ErrorScreen />
       :
