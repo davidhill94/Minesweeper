@@ -28,6 +28,7 @@ cursor: pointer;
 border: 1px solid #000;
 border-radius: 3px;
 background-color: transparent;
+color: #000;
 
 &:hover {
     background-color: var(--theme-secondary);
