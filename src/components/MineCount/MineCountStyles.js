@@ -9,6 +9,16 @@ justify-content: space-between;
 width: 33%;
 color: #fff;
 font-family: var(--font-primary);
-font-size: 2rem;
+font-size: 1.5rem;
 margin: 0.5rem;
+
+@media screen and (max-width: 960px){
+    width: 45%;
+}
+@media screen and (max-width: 768px){
+    width: 50%;
+}
+@media screen and (max-width: 650px){
+    width: 75%;
+}
 `
