@@ -18,6 +18,7 @@ const Game = () => {
     const [difficulty, setDifficulty] = useState("beginner");
     const [minesRemaining, setMinesRemaining] = useState(10);
     const [instructionsModal, setInstructionsModal] = useState(false);
+    const [toggle, setToggle] = useState(false);
  
 const handleGameOver = (bool) => {
   setGameOver(bool);
@@ -43,11 +44,14 @@ const handleMineClicked = (bool) => {
     difficulty={difficulty}
     setMinesRemaining={setMinesRemaining}
     minesRemaining={minesRemaining}
+    toggle={toggle}
     />
     <MineCount 
     mineCount={mineCount}
     setInstructionsModal={setInstructionsModal}
     instructionsModal={instructionsModal}
+    toggle={toggle}
+    setToggle={setToggle}
     />
     <Settings 
     setHeight={setHeight}

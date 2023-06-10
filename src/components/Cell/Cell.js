@@ -4,7 +4,7 @@ import { CellContainer } from './CellStyles';
 import { handleCellClick } from '../../functions/CellClick';
 import { handleRightClick } from '../../functions/RightClick';
 
-const Cell = ({ item, setGrid, grid, gameOver, handleGameOver, handleMineClicked, setMineCount, checkArr, setCheckArr, difficulty, setMinesRemaining }) => {
+const Cell = ({ item, setGrid, grid, gameOver, handleGameOver, handleMineClicked, setMineCount, checkArr, setCheckArr, difficulty, setMinesRemaining, toggle }) => {
 
   useEffect(() => {
     if (gameOver === true) {
@@ -18,12 +18,19 @@ const Cell = ({ item, setGrid, grid, gameOver, handleGameOver, handleMineClicked
     }
   }, [gameOver])
 
+  const toggleClickFunction = (e) => { 
+    toggle ? 
+    handleRightClick(e, item.x, item.y, grid, setGrid, item, setMineCount, setMinesRemaining) 
+    : 
+    handleCellClick(e, item.x, item.y, grid, setGrid, item, handleMineClicked, setMineCount, setCheckArr, checkArr)
+  }
+
 
   return (
     <CellContainer 
     onContextMenu={(e) => handleRightClick(e, item.x, item.y, grid, setGrid, item, setMineCount, setMinesRemaining)}
     id={[item.x, item.y]}
-    onClick={(e) => handleCellClick(e, item.x, item.y, grid, setGrid, item, handleMineClicked, setMineCount, setCheckArr, checkArr)}
+    onClick={(e) => toggleClickFunction(e)}
     item={item}
     difficulty={difficulty}
     >

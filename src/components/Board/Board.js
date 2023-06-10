@@ -7,7 +7,7 @@ import { createBoard } from '../../functions/CreateBoard';
 import GameOver from '../GameOver/GameOver';
 import { handleAll } from '../../functions/HandleAll';
 
-const Board = ({ height, width, mines, mineCount, gameOver, handleGameOver, mineClicked, handleMineClicked, setMineCount, difficulty, setMinesRemaining, minesRemaining }) => {
+const Board = ({ height, width, mines, mineCount, gameOver, handleGameOver, mineClicked, handleMineClicked, setMineCount, difficulty, setMinesRemaining, minesRemaining, toggle }) => {
 
   const [grid, setGrid] = useState([]);
   const [checkArr, setCheckArr] = useState([]);
@@ -69,6 +69,7 @@ const Board = ({ height, width, mines, mineCount, gameOver, handleGameOver, mine
                 setCheckArr={setCheckArr}
                 difficulty={difficulty}
                 setMinesRemaining={setMinesRemaining}
+                toggle={toggle}
               />
             )
           })

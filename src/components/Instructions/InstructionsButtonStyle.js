@@ -6,8 +6,8 @@ border-radius: 50%;
 border: 1px solid #fff;
 height: 25px;
 width: 25px;
-margin-left: 2rem;
 cursor: pointer;
+background-color: var(--theme-secondary);
 
 &:hover{
     background-color: var(--theme-primary);

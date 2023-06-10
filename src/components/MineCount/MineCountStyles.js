@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
 export const MineCountContainer = styled.div`
-display: flex;
+display: grid;
+grid-template-columns: 20% 60% 20%;
+place-items: center;
 align-items: center;
-justify-content: center;
+justify-content: space-between;
+width: 33%;
 color: #fff;
 font-family: var(--font-primary);
 font-size: 2rem;
