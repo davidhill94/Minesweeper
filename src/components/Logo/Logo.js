@@ -1,9 +1,10 @@
 import React from 'react'
-import { LogoText } from './LogoStyles'
+import { LogoImg } from './LogoStyles';
+import logo from '../../images/minesweeper_logo.png';
 
 const Logo = () => {
   return (
-    <LogoText>Minesweeper</LogoText>
+    <LogoImg src={logo} alt="Minesweeper Logo"/>
   )
 }
 
