@@ -8,6 +8,7 @@ height: 25px;
 width: 25px;
 cursor: pointer;
 background-color: var(--theme-secondary);
+color: var(--theme-primary);
 
 &:hover{
     background-color: var(--theme-primary);
